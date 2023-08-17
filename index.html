@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="nav">
+        <h1 class="store">E-commerce store</h1>
+        <div class="end">
+            <ul>
+               <li> <h1 id="pdt-n">0</h1></li>
+            <li><h1 id="amt">$0.00</h1></li>
+            </ul>
+            
+        </div>
+    </div>
+    
+    <div class="page">
+        <h1>Product</h1>
+        <p>$10.00</p>
+        <button class="button" onclick="addtocart()">Add to cart</button>
+        <button class="button" onclick="removetocart()">Remove</button>
+    </div>
+    <script>
+        var x = 0;
+        var y = 0; 
+        document.getElementById("pdt-n").innerText = x;
+        document.getElementById("amt").innerText = "$" + y.toFixed(2); 
+
+        function addtocart() {
+            x = x + 1;
+            document.getElementById("pdt-n").innerText = x;
+            y = y + 10; 
+            document.getElementById("amt").innerText = "$" + y.toFixed(2);
+        }
+
+        function removetocart() {
+            if (x > 0) {
+                x = x - 1;
+                document.getElementById("pdt-n").innerText = x;
+                y = y - 10; 
+                document.getElementById("amt").innerText = "$" + y.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>
